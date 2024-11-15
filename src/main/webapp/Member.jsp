@@ -9,7 +9,9 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            color: #2c3e50;
         }
+
         .sidebar {
             position: fixed;
             left: 0;
@@ -18,12 +20,15 @@
             background-color: #212122;
             color: #ecf0f1;
             padding-top: 20px;
+            transition: width 0.3s ease;
         }
+
         .sidebar img {
             width: 150px;
             margin: 20px auto;
             display: block;
         }
+
         .sidebar a, .dropdown-btn {
             display: block;
             color: #ecf0f1;
@@ -34,22 +39,30 @@
             background: none;
             border: none;
             cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
         }
+
         .sidebar a:hover, .dropdown-btn:hover {
             background-color: #34495e;
         }
+
         .dropdown-container {
             display: none;
             background-color: #34495e;
             padding-left: 8px;
         }
+
         .dropdown-container a {
             padding-left: 30px;
         }
+
         .content {
             margin-left: 250px;
             padding: 20px;
+            transition: margin-left 0.3s ease;
         }
+
         .topnav {
             display: flex;
             justify-content: space-between;
@@ -58,11 +71,17 @@
             padding: 10px 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
         .topnav a {
             color: #2c3e50;
             text-decoration: none;
             margin-left: 20px;
         }
+
+        .topnav a:hover {
+            text-decoration: underline;
+        }
+
         .card {
             background-color: #fff;
             padding: 20px;
@@ -70,81 +89,155 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
-        .chart-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .chart-container .chart {
-            width: 48%;
-        }
+
         .form-group {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
+            align-items: center;
         }
+
         .form-group label {
             width: 20%;
             text-align: right;
             margin-right: 20px;
             font-weight: bold;
+            font-size: 14px;
         }
+
         .form-group input, .form-group select {
             width: 70%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
         }
+
         .form-group input[type="radio"] {
             width: auto;
             margin-left: 10px;
         }
+
         .form-group-total {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             margin-top: 20px;
         }
+
         .form-group-total label {
             margin-right: 10px;
             font-weight: bold;
+            font-size: 16px;
         }
+
         .form-group-total input {
             width: 100px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             text-align: right;
+            font-size: 16px;
         }
+
         .form-group-submit {
             text-align: center;
             margin-top: 30px;
         }
+
         .form-group-submit button {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #3498db;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
         }
+
         .form-group-submit button:hover {
             background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+            }
+
+            .form-group label {
+                width: 30%;
+            }
+
+            .form-group input, .form-group select {
+                width: 65%;
+            }
+
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topnav a {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-group label {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+
+            .form-group input, .form-group select {
+                width: 100%;
+            }
+
+            .form-group-total {
+                justify-content: center;
+            }
+
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <img src="https://pbs.twimg.com/media/GTA3yrPWIAAKluC?format=png&name=small" alt="Logo">
-        <a href="#">Dashboard</a>
+        <a href="Home.jsp">Dashboard</a>
         <button class="dropdown-btn">Member</button>
         <div class="dropdown-container">
-            <a href="#">New Member</a>
-            <a href="#">List of Members</a>
+            <a href="Member.jsp">New Member</a>
+            <a href="MemberList.jsp">List of Members</a>
         </div>
         <button class="dropdown-btn">Trainers</button>
         <div class="dropdown-container">
-            <a href="#">New Trainer</a>
+            <a href="Trainer.jsp">New Trainer</a>
             <a href="#">List of Trainers</a>
         </div>
         <a href="#">Generate Bill</a>
@@ -158,8 +251,8 @@
         <div class="topnav">
             <div>Manage Users</div>
             <div>
-                <a href="#">Home</a>
-                <a href="#">Logout</a>
+                <a href="Home.jsp">Home</a>
+                <a href="login.jsp">Logout</a>
                 <a href="#">Hi, Arpit</a>
             </div>
         </div>
