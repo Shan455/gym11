@@ -3,6 +3,9 @@ package com.gymmanagement.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.gymmanagement.entity.Member;
+import com.gymmanagement.service.MemberService;
+
 @RestController
 @RequestMapping("/api/members")
 public class MemberController {

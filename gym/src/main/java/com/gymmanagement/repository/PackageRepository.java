@@ -1,6 +1,5 @@
 package com.gymmanagement.repository;
 
-public class PackageRepository {
 
 	import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -8,4 +7,4 @@ public class PackageRepository {
 	    // Additional query methods if needed
 	}
 
-}
+

@@ -1,12 +1,12 @@
 package com.gymmanagement.repository;
 
-public class MemberRepository {
+
 	
-	import org.springframework.data.jpa.repository.JpaRepository;
+	import com.gymmanagement.entity.Member;
 
 	public interface MemberRepository extends JpaRepository<Member, Long> {
 	    
 	    Member findByEmail(String email);
 	}
 
-}
+

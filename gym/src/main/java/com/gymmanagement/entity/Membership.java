@@ -1,14 +1,23 @@
 package com.gymmanagement.entity;
 
-public class membershipEntity {
-	
+
 	import java.util.Date;
 
-	@Entity
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+	@EntityScan
 	@Table(name = "membership")
 	public class Membership {
 
-	    @Id
+
+
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long membershipId;
 
@@ -18,7 +27,7 @@ public class membershipEntity {
 
 	    @ManyToOne
 	    @JoinColumn(name = "package_id", nullable = false)
-	    private Package package;
+	    private Package Membershippackage;
 
 	    @Column(nullable = false)
 	    private Date startDate;
@@ -43,12 +52,13 @@ public class membershipEntity {
 	    }
 
 	    public Package getPackage() {
-	        return package;
+	        return Membershippackage;
 	    }
 
-	    public void setPackage(Package package) {
-	        this.package = package;
+	    public void setPackage(Package pkg) {
+	        this.Membershippackage = pkg;
 	    }
+	    
 
 	    public Date getStartDate() {
 	        return startDate;
@@ -67,4 +77,4 @@ public class membershipEntity {
 	    }
 	}
 
-}
+

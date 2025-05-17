@@ -1,24 +1,23 @@
 package com.gymmanagement.service;
 
-public class PackageServiceImpl {
 
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Service;
 	import org.springframework.transaction.annotation.Transactional;
 
+import com.gymmanagement.repository.PackageRepository;
+
 	@Service
 	@Transactional
-	public class PackageServiceImpl implements PackageService {
+	public class PackageServiceImpl extends PackageService {
 	    
 	    @Autowired
 	    private PackageRepository packageRepository;
 	    
-	    @Override
-	    public Package addPackage(Package package) {
-	        return packageRepository.save(package);
+	    public Package addPackage(Package pkg) {
+	        return packageRepository.save(pkg);
 	    }
 	    
-	    @Override
 	    public Package findById(Long id) {
 	        return packageRepository.findById(id).orElse(null);
 	    }
@@ -26,4 +25,4 @@ public class PackageServiceImpl {
 	    // Additional methods as needed
 	}
 
-}
+

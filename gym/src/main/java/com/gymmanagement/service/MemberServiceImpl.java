@@ -1,13 +1,14 @@
 package com.gymmanagement.service;
 
-public class MemberServiceImpl {
 	import com.gymmanagement.TrainerService;
-	import org.springframework.beans.factory.annotation.Autowired;
+import com.gymmanagement.entity.TrainerEntity.Trainer;
+
+import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.web.bind.annotation.*;
 
 	@RestController
 	@RequestMapping("/api/trainers")
-	public class TrainerController {
+	public class MemberServiceImpl<trainerService> {
 	    
 	    @Autowired
 	    private TrainerService trainerService;
@@ -26,4 +27,4 @@ public class MemberServiceImpl {
 	    // Additional endpoints as needed
 	}
 
-}
+

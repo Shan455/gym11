@@ -1,30 +1,24 @@
-package com.gymmanagement.Controller;
+package com.gymmanagement.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.gymmanagement.service.TrainerService;
+
+@RestController
+@RequestMapping("/trainers")
 public class TrainerController {
 
-	import com.yourgym.service.TrainerService;
-	import org.springframework.beans.factory.annotation.Autowired;
-	import org.springframework.web.bind.annotation.*;
+    @Autowired
+    private TrainerService trainerService;
 
-	@RestController
-	@RequestMapping("/api/trainers")
-	public class TrainerController {
-	    
-	    @Autowired
-	    private TrainerService trainerService;
-	    
-	    @PostMapping("/add")
-	    public Trainer addTrainer(@RequestBody Trainer trainer) {
-	        // Validate and add trainer
-	        return trainerService.addTrainer(trainer);
-	    }
-	    
-	    @GetMapping("/{id}")
-	    public Trainer findById(@PathVariable Long id) {
-	        return trainerService.findById(id);
-	    }
-	    
-	    // Additional endpoints as needed
-	}
+    @PostMapping
+    public TrainerService addTrainer(@RequestBody TrainerService trainer) {
+        return trainerService.addTrainer(trainer);
+    }
 
+    @GetMapping("/{id}")
+    public TrainerService getTrainer(@PathVariable Long id) {
+        return trainerService.findById(id);
+    }
 }

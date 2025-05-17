@@ -1,9 +1,10 @@
 package com.gymmanagement.service;
 
-public class MembershipService {
-	package com.yourgym.service;
 
-	public interface MembershipService {
+
+import com.gymmanagement.entity.Membership;
+
+public interface MembershipServiceInterface{
 	    
 	    Membership addMembership(Membership membership);
 	    
@@ -12,4 +13,4 @@ public class MembershipService {
 	    // Additional methods as needed
 	}
 
-}
+
